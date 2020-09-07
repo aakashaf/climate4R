@@ -27,7 +27,6 @@ requirements:
     - r-base=3.6.2=h7ed4ef7_1
     - r-rjava
     - openjdk=8.0.152=h7b6447c_3
-    - openjdk
     - gdal
     - xorg-libxt
     - udunits2
