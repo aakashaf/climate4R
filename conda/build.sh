@@ -4,11 +4,11 @@ export UDUNITS2_INCLUDE=${PREFIX}/include
 export CPATH=${PREFIX}/include
 
 # for rjava
-#export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib/server:$PREFIX/lib/R/library/rJava/libs:$PREFIX/jre/lib/amd64/server
+export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib/server:$PREFIX/lib/R/library/rJava/libs:$PREFIX/jre/lib/amd64/server
 
 R --vanilla -e 'install.packages("devtools", repos="https://cloud.r-project.org/")'
+R --vanilla -e "install.packages('udunits2', repos='https://cloud.r-project.org/', configure.args='--with-udunits2-lib=${UDUNITS2_LIB}')"
 #R --vanilla -e 'install.packages("rJava", repos="https://cloud.r-project.org/")'
-#R --vanilla -e 'install.packages("udunits2", repos="https://cloud.r-project.org/")'
 #R --vanilla -e 'install.packages("ncdf4", repos="https://cloud.r-project.org/")'
 #R --vanilla -e 'install.packages("gh", repos="https://cloud.r-project.org/")'
 #R --vanilla -e 'install.packages("matrix", repos="https://cloud.r-project.org/")'
@@ -33,3 +33,4 @@ R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/VALUE@v2.2.1
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.value@v0.0.2")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/mopa@v1.0.0")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/drought4R@v0.2.0")'
+R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.datasets@v0.0.1")'

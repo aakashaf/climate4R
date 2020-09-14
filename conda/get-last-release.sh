@@ -22,7 +22,8 @@ SantanderMetGroup/fireDanger
 SantanderMetGroup/VALUE
 SantanderMetGroup/climate4R.value
 SantanderMetGroup/mopa
-SantanderMetGroup/drought4R'
+SantanderMetGroup/drought4R
+SantanderMetGroup/climate4R.datasets'
 
 cat >build.sh <<EOF
 # for convertR
@@ -31,7 +32,7 @@ export UDUNITS2_INCLUDE=\${PREFIX}/include
 export CPATH=\${PREFIX}/include
 
 # for rjava
-#export LD_LIBRARY_PATH=\${PREFIX}/lib:\${PREFIX}/lib/server:\$PREFIX/lib/R/library/rJava/libs:\$PREFIX/jre/lib/amd64/server
+export LD_LIBRARY_PATH=\${PREFIX}/lib:\${PREFIX}/lib/server:\$PREFIX/lib/R/library/rJava/libs:\$PREFIX/jre/lib/amd64/server
 
 R --vanilla -e 'install.packages("devtools", repos="https://cloud.r-project.org/")'
 #R --vanilla -e 'install.packages("rJava", repos="https://cloud.r-project.org/")'
